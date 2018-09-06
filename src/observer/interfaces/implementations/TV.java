@@ -10,25 +10,34 @@ import observer.interfaces.Observer;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
  */
 public class TV implements Observer, Media{
     private String messages;
     private EmergencyBroadcast emergencyBroadcast;
 
-    
+    /**
+     * Constructor for TV
+     */
     public TV(EmergencyBroadcast emergencyBroadcast)
     {
         messages = "";
         this.emergencyBroadcast = emergencyBroadcast;
     }
     
+    /**
+     * updating message
+     */
     @Override
     public void update(String message) 
     {
         messages = message;
     }
 
+    /**
+     * broadcasting message
+     */
     @Override
     public void broadcast()
     {
@@ -36,6 +45,9 @@ public class TV implements Observer, Media{
                 + "important message: \n" + messages);
     }
     
+    /**
+     * removing observer
+     */
     public void removeObserver()
     {
         emergencyBroadcast.removeObserver(this);

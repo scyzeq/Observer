@@ -16,19 +16,27 @@ public class Internet implements Observer, Media{
 
     private String messages;
     private EmergencyBroadcast emergencyBroadcast;
-    
+    /**
+     * Constructor for internet
+     */
     public Internet(EmergencyBroadcast emergencyBroadcast)
     {
         messages = "";
         this.emergencyBroadcast = emergencyBroadcast;
     }
     
+    /**
+     * updating message
+     */
     @Override
     public void update(String message) 
     {
         messages = message;
     }
 
+    /**
+     * broadcasting message
+     */
     @Override
     public void broadcast() 
     {
@@ -36,6 +44,9 @@ public class Internet implements Observer, Media{
                 + messages);
     }
     
+    /**
+     * removing observer
+     */
     public void removeObserver()
     {
         emergencyBroadcast.removeObserver(this);

@@ -12,12 +12,13 @@ import observer.interfaces.implementations.TV;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
  */
 public class main {
 
     /**
-     * @param args the command line arguments
+     * Main function
      */
     public static void main(String[] args) {
         
@@ -37,7 +38,9 @@ public class main {
         radio.broadcast();
         tv.broadcast();
         
-        //Since no one is listening from radio message is not getting updated
+        /**
+         * Since no one is listening from radio, message is not getting updated
+         */
         radio.removeObserver();
         emergencyBroadcast.nextMessage();
         internet.broadcast();

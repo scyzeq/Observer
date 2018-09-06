@@ -17,17 +17,26 @@ public class Radio implements Observer, Media{
     private String messages;
     private EmergencyBroadcast emergencyBroadcast;
     
+    /**
+     * Constructor for radio
+     */
     public Radio(EmergencyBroadcast emergencyBroadcast)
     {
         messages = "";
         this.emergencyBroadcast = emergencyBroadcast;
     }
-            
+    
+    /**
+     * updating message
+     */   
     @Override
     public void update(String message) {
         messages = message;
     }
 
+    /**
+     * broadcasting message
+     */
     @Override
     public void broadcast() 
     {
@@ -35,6 +44,9 @@ public class Radio implements Observer, Media{
                 + messages);
     }
     
+    /**
+     * removing observer
+     */
     public void removeObserver()
     {
         emergencyBroadcast.removeObserver(this);

@@ -7,10 +7,15 @@ package observer.interfaces;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
+ * Interface for broadcasting
  */
 public interface Media {
     
+    /**
+     * method for broadcasting
+     */
     public void broadcast();
     
 }

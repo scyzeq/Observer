@@ -12,37 +12,51 @@ import observer.interfaces.Observer;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
+ * Implementation for broadcasting information
  */
 public class EmergencyBroadcast implements Information{
-
+    
     private ArrayList<Observer> observerList;
     private String message;
     
+    /**
+     * constructor for Emergency broadcast
+     */
     public EmergencyBroadcast()
     {
         observerList = new ArrayList<Observer>();
         message = "";
     }
     
-    
+    /**
+     * Implementation of abstract method
+     */
     public void addObserver(Observer observer) 
     {
         observerList.add(observer);
     }
 
-    
+    /**
+     * Implementation of abstract method
+     */
     public void removeObserver(Observer observer) 
     {
         observerList.remove(observer);
     }
 
-    
+    /**
+     * Implementation of abstract method notifying all observers
+     */
     public void notifyObserver() 
     {
         observerList.forEach(o -> o.update(message));
     }
     
+    /**
+     * Inserting new message
+     */
     public void nextMessage()
     {
         Scanner in = new Scanner(System.in);
@@ -51,6 +65,9 @@ public class EmergencyBroadcast implements Information{
         notifyObserver();
     }
     
+    /**
+     * Getter for messages
+     */
     public String getMessage()
     {
         return message;        

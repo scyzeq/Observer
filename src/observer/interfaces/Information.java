@@ -7,10 +7,21 @@ package observer.interfaces;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
+ * Interface with methods for informing observer
  */
 public interface Information {
+    /**
+     * Method for adding observer
+     */
     public void addObserver(Observer observer);
+    /**
+     * Method for removing observer
+     */
     public void removeObserver(Observer observer);
+    /**
+     * Method for notifying observer
+     */
     public void notifyObserver();
 }

@@ -9,9 +9,13 @@ import java.util.ArrayList;
 
 /**
  *
- * @author AJuda
+ * @author Adrian Juda
+ * @version 1.0
  */
 public interface Observer {
-    
+    /**
+     * updating broadcasted message
+     * @param messages string for messages
+     */
     public void update(String messages);
 }
