@@ -6,6 +6,7 @@
 package observer.interfaces.implementations;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import observer.interfaces.Information;
 import observer.interfaces.Observer;
 
@@ -15,28 +16,43 @@ import observer.interfaces.Observer;
  */
 public class EmergencyBroadcast implements Information{
 
-    private ArrayList<Observer> observer;
+    private ArrayList<Observer> observerList;
     private String message;
     
     public EmergencyBroadcast()
     {
-        observer = new ArrayList<Observer>();
-        message = "somethofsa";
+        observerList = new ArrayList<Observer>();
+        message = "";
     }
     
-    @Override
-    public void addObserver(Observer observer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void addObserver(Observer observer) 
+    {
+        observerList.add(observer);
     }
 
-    @Override
-    public void removeOserver(Observer observer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void removeObserver(Observer observer) 
+    {
+        observerList.remove(observer);
     }
 
-    @Override
-    public void notifyObserver(Observer observer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void notifyObserver() 
+    {
+        observerList.forEach(o -> o.update(message));
     }
     
+    public void nextMessage()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter message to display: ");
+        message = in.nextLine();        
+        notifyObserver();
+    }
+    
+    public String getMessage()
+    {
+        return message;        
+    }
 }

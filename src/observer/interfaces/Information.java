@@ -11,6 +11,6 @@ package observer.interfaces;
  */
 public interface Information {
     public void addObserver(Observer observer);
-    public void removeOserver(Observer observer);
-    public void notifyObserver(Observer observer);
+    public void removeObserver(Observer observer);
+    public void notifyObserver();
 }
