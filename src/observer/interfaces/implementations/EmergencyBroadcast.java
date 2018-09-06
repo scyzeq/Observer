@@ -21,7 +21,7 @@ public class EmergencyBroadcast implements Information{
     public EmergencyBroadcast()
     {
         observer = new ArrayList<Observer>();
-        message = "";
+        message = "somethofsa";
     }
     
     @Override
